@@ -1,0 +1,15 @@
+services:
+  bot:
+    build: .
+    # Pass configuration (at minimum DISCORD_TOKEN) from a local .env file.
+    env_file:
+      - .env
+    environment:
+      # Keep the cache on the mounted volume regardless of what .env says.
+      CACHE_DIR: /data/cache
+    volumes:
+      - cache:/data/cache
+    restart: unless-stopped
+
+volumes:
+  cache:

@@ -1,0 +1,21 @@
+# Local Python environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Local audio cache and metadata DB (rebuilt at runtime on the volume)
+cache/
+
+# Secrets are injected via env_file/compose, never baked into the image
+.env
+
+# Tests and dev-only files are not needed in the runtime image
+tests/
+requirements-dev.txt
+pytest.ini
+
+# VCS and editor noise
+.git/
+.gitignore
+*.md
